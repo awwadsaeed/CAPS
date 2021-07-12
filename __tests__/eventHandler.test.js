@@ -2,7 +2,6 @@
 const uuid = require('uuid').v4;
 const faker = require('faker');
 const event = require('../events');
-let store = (process.env.STORE||'CAPS');
 require('../driver');
 require('../vendor');
 require('../logger');
@@ -14,7 +13,7 @@ describe('event handler tests', () => {
       })
     let order = {
         orderId: uuid(),
-        storeName: store,
+        storeName: 'CAPS',
         customerName: faker.name.findName(),
         address:faker.address.streetAddress(),
     }
